@@ -1,7 +1,10 @@
 baseURL: https://blog.masinc.dev/
 languageCode: ja-jp
 title: "masinc ブログ"
+
+# https://github.com/adityatelange/hugo-PaperMod
 theme: "PaperMod"
+
 paginate: 10
 
 params:
