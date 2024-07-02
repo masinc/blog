@@ -1,0 +1,28 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  new:
+    desc: Create a new post
+    cmds:
+      - echo "{{.CONTENT}}" > {{.FILE_PATH}}
+    vars:
+      NOW_DATE:
+        sh: ruby -r date -e 'puts Date.today.strftime("%Y-%m-%d")'
+      NOW_DATETIME:
+        sh: ruby -r date -e 'puts DateTime.now.strftime("%Y-%m-%dT%H:%M:%S%:z")'
+      HASH: 
+        sh: ruby -r securerandom -e 'puts SecureRandom.alphanumeric(4)'
+      FILE_PATH: content/posts/{{.NOW_DATE}}-{{.HASH}}.md
+      
+      CONTENT: |
+        ---
+        title: Hello world
+        date: {{.NOW_DATETIME}}
+        draft: true
+        ---
+
+        # Hello world
+    preconditions:
+      - test ! -f {{.FILE_PATH}}          
