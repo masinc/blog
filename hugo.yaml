@@ -3,3 +3,6 @@ languageCode: ja-jp
 title: "masinc ブログ"
 theme: "PaperMod"
 paginate: 10
+
+params:
+  showReadingTime: true
