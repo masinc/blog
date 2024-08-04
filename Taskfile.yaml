@@ -6,7 +6,10 @@ tasks:
   new:
     desc: Create a new post
     cmds:
-      - echo "{{.CONTENT}}" > {{.FILE_PATH}}
+      - cmd: echo "{{.CONTENT}}" > {{.FILE_PATH}}
+        silent: true
+      - cmd: echo "{{.FILE_PATH}}"
+        silent: true
     vars:
       NOW_DATE:
         sh: ruby -r date -e 'puts Date.today.strftime("%Y-%m-%d")'
@@ -26,3 +29,5 @@ tasks:
         # Hello world
     preconditions:
       - test ! -f {{.FILE_PATH}}          
+    generates:
+      - '{{.FILE_PATH}}'
