@@ -26,7 +26,6 @@ tasks:
         draft: true
         ---
 
-        # Hello world
     preconditions:
       - test ! -f {{.FILE_PATH}}          
     generates:
