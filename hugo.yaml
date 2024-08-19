@@ -9,3 +9,10 @@ paginate: 10
 
 params:
   showReadingTime: true
+  ShowShareButtons: true
+  ShareButtons:
+    - twitter
+
+socialIcons:
+  - name: "x"
+    url: "https://x.com"
