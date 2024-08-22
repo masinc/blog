@@ -23,6 +23,7 @@ tasks:
         ---
         title: Hello world
         date: {{.NOW_DATETIME}}
+        tags: []
         draft: true
         ---
 
