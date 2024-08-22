@@ -1,6 +1,6 @@
 # https://taskfile.dev
 
-version: '3'
+version: "3"
 
 tasks:
   new:
@@ -15,10 +15,10 @@ tasks:
         sh: ruby -r date -e 'puts Date.today.strftime("%Y-%m-%d")'
       NOW_DATETIME:
         sh: ruby -r date -e 'puts DateTime.now.strftime("%Y-%m-%dT%H:%M:%S%:z")'
-      HASH: 
+      HASH:
         sh: ruby -r securerandom -e 'puts SecureRandom.alphanumeric(4)'
       FILE_PATH: content/posts/{{.NOW_DATE}}-{{.HASH}}.md
-      
+
       CONTENT: |
         ---
         title: Hello world
@@ -27,6 +27,6 @@ tasks:
         ---
 
     preconditions:
-      - test ! -f {{.FILE_PATH}}          
+      - test ! -f {{.FILE_PATH}}
     generates:
-      - '{{.FILE_PATH}}'
+      - "{{.FILE_PATH}}"
